@@ -2,8 +2,6 @@ import path from 'path'
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import productRoutes from './productRoutes.js'
-import userRoutes from './userRoutes.js'
 
 // Initialize Dot Env File
 dotenv.config()
