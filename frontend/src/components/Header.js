@@ -4,7 +4,9 @@ import { Nav, Navbar } from 'react-bootstrap'
 const Header = () => {
   return (
     <header>
-      <Nav class='navbar navbar-expand-lg navbar-dark bg-primary'>Header</Nav>
+      <Navbar bg='primary' expand='lg'>
+        Header
+      </Navbar>
     </header>
   )
 }

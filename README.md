@@ -15,3 +15,5 @@ Order of Functionality Created
 1. HomePage Product Screen
 2. Single Product Screen
 3. Authentication
+
+ProTip: Use React-Bootstrap documentation to see Examples
