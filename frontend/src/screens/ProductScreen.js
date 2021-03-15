@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
-import { useSelector, useDispatch } from 'react-redux'
 import { listProductDetails } from '../actions/productActions'
 
-const ProductScreen = ({ match }) => {
+const ProductScreen = ({ history, match }) => {
   const dispatch = useDispatch()
 
+  // Bring in Product details from state
   const productDetails = useSelector((state) => state.productDetails)
-  const { product } = productDetails
+  const { loading, error, product } = productDetails
   console.log('Redux single product ----- ' + JSON.stringify(product, null, 4))
 
+  // Note: This is the component which creates actionCreator > action > Reducer > Store
+  // This is what modifies the state
   useEffect(() => {
     dispatch(listProductDetails(match.params.id))
-  }, [dispatch])
+  }, [dispatch, match])
 
   return (
     <>

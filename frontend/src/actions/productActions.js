@@ -28,14 +28,18 @@ export const listProducts = () => async (dispatch) => {
 
 export const listProductDetails = (id) => async (dispatch) => {
   try {
-    dispatch({ type: PRODUCT_DETAILS_REQUEST })
+    dispatch({ type: PRODUCT_DETAILS_REQUEST }) // Sending request`
 
     const { data } = await axios.get(`/api/products/${id}`)
+
+    // At this point, we have the product data from the backend
     dispatch({
+      // Fetching the data was successful
       type: PRODUCT_DETAILS_SUCCESS,
       payload: data,
     })
   } catch (error) {
+    // If fetching data was not succesful
     dispatch({
       type: PRODUCT_DETAILS_FAIL,
       payload:

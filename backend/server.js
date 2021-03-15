@@ -28,6 +28,9 @@ const connectDB = async () => {
 // Connect Backend to MongoDB
 connectDB()
 
+// Allows express to access json data
+app.use(express.json())
+
 app.use('/api/products', productRoutes)
 
 // Make the upload folder static, Add new docs
