@@ -2,6 +2,7 @@ import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../actions/userActions'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -10,12 +11,12 @@ const Header = () => {
   const { userInfo } = userLogin
 
   const logoutHandler = () => {
-    dispatch()
+    dispatch(logout())
   }
 
   return (
     <header>
-      <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <LinkContainer to='/'>
             <Navbar.Brand>ProShop</Navbar.Brand>
